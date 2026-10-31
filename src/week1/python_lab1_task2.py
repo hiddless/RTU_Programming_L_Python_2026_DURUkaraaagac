@@ -29,11 +29,20 @@ Examples (these are also used to check your work):
 def greet_user(name: str) -> str:
     """Return a greeting message after cleaning and capitalizing the name."""
     # TODO: implement cleaning, the empty-name case, and formatting
-    raise NotImplementedError("greet_user() is not implemented yet")
+    name= name.strip()
+    name = name.capitalize()
+
+    if not name:
+        name = "Stranger"
+
+    return f"Hello, {name}! welcome to python"
 
 
 if __name__ == "__main__":
     # Keep all input() calls inside this block, otherwise the autograder
     # cannot import your file.
     # TODO: read name from input and print greeting
-    pass
+    name = input("enter your name: ")
+    print(greet_user(name))
+
+
